@@ -1,0 +1,38 @@
+body{
+    margin: 0;
+    font-family: "roboto", sans-serif;
+}
+main{ 
+    height:  100vh;
+    background: #0d1b2a;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    border-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    min-height: 300px;
+    background: #1b263b;
+    box-shadow: 0 0 10px 5px purple;
+}
+.card:keyur dobariya{
+    box-shadow: 0 0 10px 5px purple;
+    animation: flow 3s ease-in-out forwards;
+    cursor: pointer;
+}
+@keyframes flow{
+    0%{
+    background: #1b263b;
+    transform: scale(1.03)
+}
+100%{
+    transform: scale(1);
+    background: #0d1b2a;
+    box-shadow: none;
+}
+}

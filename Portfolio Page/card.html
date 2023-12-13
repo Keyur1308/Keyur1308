@@ -1,0 +1,150 @@
+<!-- <body> -->
+    <!-- partial: index.partial.html  -->
+    <!-- <div id="app"></div> -->
+    <!-- partial
+    <script
+    src='https://cdnjs.cloudflare.com/ajax/libs/react/1
+    5.6.1/react.min.js'›</script> 
+    <script 
+    src='https://cdnjs.cloudflare.com/ajax/libs/react/1
+    5.6.1/react-dom.min.js'›</script><script 
+    src="./script.js"›</script>
+    
+    < body>
+
+    class Card extends React.Component {
+constructor (props)
+super(props);
+this.state = {
+active: false, move: false, limit: false, mouseStartPosX: null, mouseStartPosY: null, mouseCurrPosX: null, mouseCurrPosY: null,
+Posx: null,
+Posy: null, k: 0.2,
+restY: fx: 0
+fy: 0 ax: 0, ay:
+VX:
+vy: 0
+mass: 0 damping:
+0.8 1;
+this.handleDown = this.handleDown.bind(this);
+this.handleUp = this.handleUp.bind(this);
+this.handleMove = this.handleMove.bind(this);
+this.animate = this.animate.bind(this);
+this.updateCard = this.updateCard.bind(this);
+this.handleTouchStart =
+this.handleTouchStart.bind(this);
+this.handleTouchEnd =
+this.handleTouchEnd.bind(this);
+this.handleTouchMove this.handleTouchMove.bind(this);
+componentDidMount () {
+this.animate();
+handleDown (e) {
+this.setState {
+move: true, active: true, mouseStartPosX: e.clientX, mouseStartPosY: e.clientY });
+handleTouchStart(e) {
+e.persist();
+this.setState l move: true, active: true, mouseStartPosX: e.touches [o].screenx, mouseStartPosY: e.touches [o].screenY });
+console.log(this. state .mouseStartPosX);
+}
+
+
+handleMove(e) {
+if (this.state.limit) {
+if (this.state.move) {
+let mouseCurrPosX = e.clientx;
+let mouseCurrPosY = e.clientY;
+let Posx = mouseCurrPosX
+this.state.mouseStartPosX;
+let Posy = mouseCurrPosY
+this.state.mouseStartPosY;
+let el = document.getElementByld("card"
+this.props.no);
+let height = window. innerHeight;
+let width = window.innerWidth;
+let maxx = width - width * 20 / 100;
+function map_range(value, Lowl, highl,
+Low?, high?) {
+return Low2 + (high2 - Low2) * (value
+Lowl) / (high1 - Low1);
+let mouseRange = mouseCurr PosX;
+if (mouseRange < width / 2) {
+mouseRange = width - mouseRange;
+let damping = map_range
+mouseRange, width / 2, width
+- width * 10 / 100,
+0.6,
+0.8);
+this.setState({
+Posx, Posy, damping, mouseCurrPosX, mouseCurrPosY });
+if (mouseCurrPosX > width - width * 20 /
+100) 5
+let restx, restY;
+if (mouseCurrPosx > width / 2) {
+restX = this.state. Posx * 5;
+} else {
+restx = -this.state. Pos× * 5;
+if (mouseCurrPosY > height / 2) {
+restY = this.state. Posy * 5;
+] else {
+restY = this.state.Posy *
+}
+let limit = true;
+let move = false;
+let damping = 0.06;
+this.setState
+restX, restY, limit, move, damping }
+O = 4
+setTimeout(0) = {
+window.cancelAnimationFrame(this.animate);
+]. 10);
+});
+
+
+
+} else if (mouseCurrPosx < width * 20 / 100) {
+let restx, restY;
+if (mouseCurrPosX > width / 2) {
+restx = -this.state.Posx * 5;
+† else
+restx = this.state. Posx * 5;
+if (mouseCurrPosY > height / 2) {
+restY = this.state.Posy *
+5;
+} else
+resty = this.state. Posy * 5;
+7
+let limit = true:
+let move = false:
+let damping = 0.06;
+this.setState({
+restx, restY, limit, move, damping });
+handleTouchMove(e){
+e.persist ( );
+if (Ithis.state.limit) {
+if (this.state.move) {
+let mouseCurrPosX = e.touches[0].screenX;
+let mouseCurrPosY = e. touches [•].screenY;
+let Posx = mouseCurrPosX
+this.state.mouseStartPosX;
+let Posy = mouseCurrPosY
+this.state.mouseStartPosY;
+let el = document.getElementById("card"
+this.props.no);
+let height = window. innerHeight;
+let width = window. innerWidth;
+let max = width - width * 20 / 100;
+function map_range value, low1, high1,
+Low2, high2) {
+return low2 + (high2 - Low2) * (value
+low1) / (high1 - Low1);
+let mouseRange = mouseCurrPosX;
+if (mouseRange < width / 2) {
+mouseRange = width - mouseRange;
+}
+let damping = map_range
+mouseRange, width / 2,
+width - width * 10 / 100,
+0.6,
+0.8);
+
+
+ -->
