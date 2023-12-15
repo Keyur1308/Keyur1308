@@ -1,10 +1,12 @@
-body{
-    margin: 0;
-    font-family: "roboto", sans-serif;
+/* body{
+    margin: 10;
+    padding: 10;
+    display: flex;
+    font-family: 'Times New Roman', Times, serif;
 }
-main{ 
-    height:  100vh;
-    background: #0d1b2a;
+main{
+    font-size: 100vh;
+    background: yellow;
     color: green;
     display: flex;
     justify-content: center;
@@ -35,4 +37,4 @@ main{
     background: #0d1b2a;
     box-shadow: none;
 }
-}
+} */
